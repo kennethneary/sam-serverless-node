@@ -1,0 +1,24 @@
+{
+  "ProductsDynamoDBTable": {
+    "Type": "AWS::DynamoDB::Table",
+    "Properties": {
+      "TableName": "test-db-kn",
+      "AttributeDefinitions": [
+        {
+          "AttributeName": "id",
+          "AttributeType": "S"
+        }
+      ],
+      "KeySchema": [
+        {
+          "AttributeName": "id",
+          "KeyType": "HASH"
+        }
+      ],
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      }
+    }
+  }
+}
