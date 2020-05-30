@@ -1,14 +1,14 @@
 version: '3.7'
 
-services: 
+services:
   dynamodb:
     container_name: dynamodb
     image: amazon/dynamodb-local
     ports:
       - 8000:8000
-    networks: 
+    networks:
       - aws-local-network
 
-networks: 
+networks:
   aws-local-network:
     driver: bridge

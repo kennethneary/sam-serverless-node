@@ -1,20 +1,22 @@
 const log = require('lambda-log');
-const { DocumentClient } = require('aws-sdk/clients/dynamodb');
+const dbUtils = require('../utils/db-utils');
 
-const docClient = new DocumentClient();
 const tableName = process.env.SAMPLE_TABLE;
 
 exports.putItemHandler = async (event) => {
+    log.info('received:', event);
+
     if (event.httpMethod !== 'POST') {
         throw new Error(
             `postMethod only accepts POST method, you tried: ${event.httpMethod} method.`
         );
     }
-    log.info('received:', event);
+
+    const docClient = dbUtils.getDdbConnection();
+    log.info('tableName:', tableName);
 
     const body = JSON.parse(event.body);
     const { id, name } = body;
-
     const params = {
         TableName: tableName,
         Item: {
@@ -22,8 +24,9 @@ exports.putItemHandler = async (event) => {
             name,
         },
     };
+    log.info('before docClient:');
     await docClient.put(params).promise();
-
+    log.info('after docClient:');
     const response = {
         statusCode: 200,
     };
