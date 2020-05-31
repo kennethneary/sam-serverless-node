@@ -12,3 +12,4 @@ services:
 networks:
   aws-local-network:
     driver: bridge
+    name: aws-local-network

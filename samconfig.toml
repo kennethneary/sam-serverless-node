@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "sam-app-stack"
+s3_bucket = "aws-sam-default-bucket-deploy-kn"
+s3_prefix = "sam-app-stack"
+region = "eu-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
