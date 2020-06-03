@@ -1,12 +1,20 @@
 {
-    "name": "delete-test-01",
-    "description": "delete-test-01-description",
-    "version": "0.0.1",
+    "name": "sam-serverless-node",
+    "version": "1.0.0",
+    "description": "sam serverless node app",
     "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kennethneary/sam-serverless-node.git"
+    },
+    "license": "ISC",
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint src/"
+    },
     "dependencies": {
         "aws-sdk": "^2.674.0",
         "lambda-log": "^2.3.1"
-
     },
     "devDependencies": {
         "eslint": "^6.8.0",
@@ -18,9 +26,5 @@
         "jest": "^24.7.1",
         "prettier": "^2.0.5",
         "@types/lambda-log": "^2.2.0"
-    },
-    "scripts": {
-        "test": "jest",
-        "lint": "eslint src/"
     }
 }
