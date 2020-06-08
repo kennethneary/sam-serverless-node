@@ -13,7 +13,7 @@ exports.putItemHandler = async (event) => {
     }
 
     const docClient = dbUtils.getDdbConnection();
-    log.info('tableName:', tableName);
+    log.info(`tableName: ${tableName}`);
 
     const body = JSON.parse(event.body);
     const { id, name } = body;
@@ -29,6 +29,7 @@ exports.putItemHandler = async (event) => {
     log.info('after docClient:');
     const response = {
         statusCode: 200,
+        body: JSON.stringify({ id }),
     };
 
     log.info(

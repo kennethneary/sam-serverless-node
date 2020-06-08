@@ -29,6 +29,8 @@ describe('Test putItemHandler', () => {
             statusCode: 200,
         };
 
-        expect(result).toEqual(expectedResult);
+        expect(result).toBeDefined();
+        expect(result.statusCode).toEqual(expectedResult.statusCode);
+        expect(result.body).toBeDefined();
     });
 });

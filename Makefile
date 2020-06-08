@@ -4,7 +4,7 @@ TABLE_NAME = local-db
 
 all: build
 
-deploy:
+deploy: build
 	sam deploy
 
 build:
