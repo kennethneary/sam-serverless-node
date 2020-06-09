@@ -59,7 +59,7 @@
 			"response": []
 		},
 		{
-			"name": "Create",
+			"name": "Create/Update",
 			"request": {
 				"method": "POST",
 				"header": [
