@@ -13,7 +13,7 @@
         "lint": "eslint src/"
     },
     "dependencies": {
-        "aws-sdk": "^2.674.0",
+        "aws-sdk": "^2.814.0",
         "lambda-log": "^2.3.1"
     },
     "devDependencies": {
